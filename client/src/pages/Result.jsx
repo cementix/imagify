@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react";
 
 const Result = () => {
   // eslint-disable-next-line no-unused-vars
@@ -14,10 +16,14 @@ const Result = () => {
   const onSubmitHandler = async (e) => {};
 
   return (
-    <form
+    <motion.form
       onSubmit={onSubmitHandler}
       action=""
       className="flex flex-col min-h-[90vh] justify-center items-center"
+      initial={{ opacity: 0.2, y: 100 }}
+      transition={{ duration: 1 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
     >
       <div>
         <div className="relative">
@@ -68,7 +74,7 @@ const Result = () => {
           </a>
         </div>
       )}
-    </form>
+    </motion.form>
   );
 };
 
